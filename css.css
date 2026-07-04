@@ -1,0 +1,171 @@
+* {
+    margin: 0;          /* Elimina el margen por defecto de todas las etiquetas */
+    padding: 0;         /* Elimina el relleno por defecto de todas las etiquetas */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total del elemento */
+}
+
+/* --- ESTILOS GENERALES DEL CUERPO (BODY) --- */
+body {
+    font-family: Poppins, sans-serif; /* Define la tipografía principal de la página */
+    /* Crea un fondo con un degradado diagonal de tonos pastel (rosa, blanco y amarillo) */
+    background: linear-gradient(135deg, #FFE6EE, #FFFDF5, #FFF3B8);
+    display: flex;             /* Activa el modelo Flexbox para posicionar los hijos */
+    justify-content: center;   /* Centra la tarjeta horizontalmente */
+    align-items: center;       /* Centra la tarjeta verticalmente */
+    min-height: 100vh;         /* Fuerza a que el cuerpo ocupe como mínimo el alto completo de la pantalla */
+    padding: 20px;             /* Añade un espacio de seguridad en los bordes para pantallas pequeñas */
+    overflow-x: hidden;        /* Oculta cualquier desbordamiento horizontal para evitar barras de desplazamiento incómodas */
+}
+
+/* --- EFECTO DE LUZ DIFUMINADA EN EL FONDO --- */
+.blur {
+    position: fixed;           /* Mantiene el círculo fijo en la pantalla al hacer scroll */
+    width: 280px;              /* Ancho del círculo de luz */
+    height: 280px;             /* Alto del círculo de luz */
+    background: #ffb8d2;       /* Color rosa base de la luz */
+    border-radius: 50%;        /* Transforma el contenedor en un círculo perfecto */
+    filter: blur(120px);       /* Difumina los bordes del círculo para simular un resplandor suave */
+    top: -120px;               /* Lo desplaza hacia arriba fuera de la pantalla */
+    left: -120px;              /* Lo desplaza hacia la izquierda fuera de la pantalla */
+    z-index: -1;               /* Asegura que permanezca detrás de la tarjeta principal */
+}
+
+/* --- TARJETA PRINCIPAL DE LA INVITACIÓN --- */
+.card {
+    width: 100%;               /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    max-width: 520px;          /* Define un ancho máximo para que no se deforme en pantallas grandes */
+    background: #fffdf8;       /* Color de fondo blanco cálido */
+    padding: 30px;             /* Espacio interno entre el borde de la tarjeta y su contenido */
+    border-radius: 30px;       /* Bordes fuertemente redondeados para un aspecto moderno y suave */
+    box-shadow: 0 15px 40px rgba(0,0,0,.12); /* Sombra perimetral para darle profundidad y efecto de elevación */
+    text-align: center;        /* Centra todos los textos y elementos alineables dentro de la tarjeta */
+    animation: entrada 1s;     /* Aplica la animación de aparición al cargar la página durante 1 segundo */
+}
+
+/* --- SUBTÍTULO SUPERIOR --- */
+h3 {
+    color: #d97fa5;            /* Tono de rosa oscuro/medio para legibilidad */
+    font-weight: 600;          /* Grosor de letra semi-negrita */
+}
+
+/* --- TÍTULO PRINCIPAL (MIS 18) --- */
+h1 {
+    font-family: "Great Vibes", cursive; /* Aplica la tipografía caligráfica elegante */
+    font-size: 70px;           /* Tamaño de letra grande destacado */
+    color: #ff7eb6;            /* Color rosa vibrante principal */
+    margin: 10px 0;            /* Añade 10 píxeles de separación arriba y abajo */
+}
+
+/* --- PARRAFO DESCRIPTIVO --- */
+.descripcion {
+    color: #666;               /* Gris medio para un texto suave pero legible */
+    font-size: 16px;           /* Tamaño estándar de lectura */
+    line-height: 1.8;          /* Interlineado amplio para mejorar la lectura */
+    margin-bottom: 25px;       /* Separación inferior respecto al contador */
+}
+
+/* ===== CONTADOR RESTAURADO ===== */
+
+/* Título de la sección del contador ("Faltan...") */
+.contador h2 {
+    margin-bottom: 15px;       /* Margen inferior para separar del bloque de tiempo */
+    color: #666;               /* Color gris oscuro */
+}
+
+/* Contenedor general de los bloques de tiempo */
+.tiempo {
+    display: grid;             /* Activa el modelo de cuadrícula (Grid) */
+    grid-template-columns: repeat(2, 1fr); /* Divide el espacio en 2 columnas de igual ancho (2x2 en total) */
+    gap: 10px;                 /* Espaciado de separación entre cada caja de tiempo */
+}
+
+/* Cajas individuales para los días, horas, minutos y segundos */
+.caja {
+    background: #FFF4B6;       /* Color de fondo amarillo pastel */
+    padding: 15px;             /* Relleno interno de la cajita */
+    border-radius: 20px;       /* Esquinas redondeadas */
+    box-shadow: 0 8px 20px rgba(0,0,0,.05); /* Micro-sombra sutil debajo de cada caja */
+}
+
+/* Números del contador (00) */
+.caja span {
+    font-size: 32px;           /* Tamaño numérico grande y vistoso */
+    color: #ff69a6;            /* Color rosa llamativo */
+    font-weight: bold;         /* Resalta el número en negrita */
+    display: block;            /* Fuerza al número a ocupar su propia línea, empujando el texto abajo */
+}
+
+/* Etiquetas de texto debajo de los números (Días, Horas, etc.) */
+.caja p {
+    margin-top: 5px;           /* Separación superior respecto al número */
+    color: #555;               /* Gris oscuro */
+}
+
+/* ===== DATOS DEL EVENTO ===== */
+.datos {
+    margin: 20px 0;            /* Margen arriba y abajo para aislar la información */
+    color: #555;               /* Gris oscuro */
+    line-height: 1.8;          /* Interlineado cómodo */
+}
+
+
+/* ===== ELEMENTOS DEL FORMULARIO ===== */
+input, textarea {
+    width: 100%;               /* Los campos de texto se expanden al ancho total disponible */
+    padding: 12px;             /* Relleno interno para escribir cómodamente */
+    margin: 8px 0;             /* Margen vertical para separar los campos entre sí */
+    border-radius: 10px;       /* Esquinas suavemente redondeadas en las cajas de entrada */
+    border: 1px solid #ddd;    /* Borde gris claro muy sutil */
+    font-family: Poppins;      /* Mantiene la tipografía global dentro de los inputs */
+}
+
+/* ===== BOTONES ===== */
+button {
+    padding: 15px;             /* Relleno que le da altura y cuerpo al botón */
+    border: none;              /* Elimina el contorno rígido por defecto del navegador */
+    border-radius: 30px;       /* Botones con bordes ovalados */
+    background: #ff98c2;       /* Color de fondo rosa pastel del botón */
+    color: white;              /* Color del texto en blanco */
+    font-weight: bold;         /* Texto resaltado */
+    cursor: pointer;           /* Cambia el cursor al icono de la "mano" al pasar el ratón */
+    margin: 5px;               /* Separación perimetral entre botones */
+    transition: .3s;           /* Suaviza todas las transiciones/efectos en 0.3 segundos (animación al pasar el ratón) */
+    width: 100%;               /* Hace que el botón abarque el ancho disponible */
+}
+
+/* Efecto visual cuando el usuario pasa el puntero sobre los botones */
+button:hover {
+    transform: scale(1.05);    /* Incrementa ligeramente el tamaño del botón en un 5% (efecto de lupa) */
+    background: #ff77ac;       /* Oscurece el tono de rosa para indicar interactividad */
+}
+
+/* ===== MENSAJE ANIMADO (Feedback de envío) ===== */
+#mensaje {
+    margin-top: 15px;          /* Separación con los elementos de arriba */
+    color: #ff5e9e;            /* Texto rosa intenso */
+    font-weight: bold;         /* Negrita */
+    min-height: 20px;          /* Reserva un espacio mínimo para que la tarjeta no salte al aparecer el texto */
+
+    /* Estado inicial: Invisible y desplazado 10px hacia abajo */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.35s ease; /* Transición suave de 0.35 segundos para simular desvanecimiento */
+}
+
+/* Clase dinámica que se añadirá mediante JavaScript para revelar el mensaje */
+#mensaje.show {
+    opacity: 1;                /* Lo vuelve completamente visible */
+    transform: translateY(0);  /* Lo regresa a su posición original (sube de forma fluida) */
+}
+
+/* ===== DEFINICIÓN DE LA ANIMACIÓN DE ENTRADA ===== */
+@keyframes entrada {
+    from {
+        opacity: 0;            /* Comienza totalmente transparente */
+        transform: translateY(30px); /* Inicia 30 píxeles más abajo de su lugar original */
+    }
+    to {
+        opacity: 1;            /* Termina completamente opaco y visible */
+        transform: translateY(0);    /* Llega a su posición exacta definitiva */
+    }
+}
